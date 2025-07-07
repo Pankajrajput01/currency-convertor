@@ -13,6 +13,7 @@ import ChangedContenturrencyInfo from "./Hooks/currency-info";
 
   const options = Object.keys(currencyInfo)
 
+
   const swap = () => {
     setFrom(to)
     setTo(from)
@@ -37,19 +38,13 @@ import ChangedContenturrencyInfo from "./Hooks/currency-info";
     >
         <div className="w-full">
             <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
-                <form
-                    // onSubmit={(e) => {
-                    //     e.preventDefault();
-                    //     convert()
-                       
-                    // }}
-                >
+                <form                >
                     <div className="w-full mb-1">
                         <InputBox
                             label="From"
                             amount={amount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency) => setAmount(amount)}
+                            onCurrencyChange={(currency) => setAmount(currency)}
                             selectCurrency={from}
                             onAmountChange={(amount) => setAmount(amount)}
                         />
@@ -68,12 +63,12 @@ import ChangedContenturrencyInfo from "./Hooks/currency-info";
                             label="To"
                             amount={convertedAmount}
                             currencyOptions={options}
+                            value={options}
                             onCurrencyChange={(currency) => setTo(currency)}
-                            selectCurrency={from}
+                            selectCurrency={to}
                             amountDisable
                         />
                     </div>
-                    {/* <bux`xtton> */}
                 </form>
             </div>
         </div>
